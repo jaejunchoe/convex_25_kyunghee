@@ -116,8 +116,23 @@ def run_convex(users, parking_df, d_matrix, weights=(0.8, 0.1, 0.1)):
     constraints = [cp.sum(x, axis=1) == 1, x <= 1]
     
     available_capacity = np.maximum(C - c, 0)
+    
+    # 혼잡도 상한 제약: (cⱼ + Σᵢ xᵢⱼ) / Cⱼ ≤ ρ_max
+    # 단, 이미 이용률이 ρ_max를 초과하는 주차장은 제외
+    rho_max = 0.95  # 최대 이용률 95%
+    
     for j in range(n_parkings):
-        constraints.append(cp.sum(x[:, j]) <= available_capacity[j] + 0.0001)
+        current_utilization = c[j] / C_safe[j]
+        
+        # 이미 이용률이 ρ_max를 초과하는 경우: 용량 제약만 적용
+        if current_utilization >= rho_max:
+            constraints.append(cp.sum(x[:, j]) <= available_capacity[j] + 0.0001)
+        else:
+            # 용량 제약과 혼잡도 제약 중 더 엄격한 것을 적용
+            capacity_limit = available_capacity[j] + 0.0001
+            congestion_limit = rho_max * C_safe[j] - c[j]
+            effective_limit = min(capacity_limit, max(0, congestion_limit) + 0.0001)
+            constraints.append(cp.sum(x[:, j]) <= effective_limit)
         
     prob = cp.Problem(objective, constraints)
     
@@ -131,7 +146,12 @@ def run_convex(users, parking_df, d_matrix, weights=(0.8, 0.1, 0.1)):
         except:
             return np.full(n_users, -1)
         
+    # 최적화 상태 확인
     if prob.status not in ['optimal', 'optimal_inaccurate']:
+        return np.full(n_users, -1)
+    
+    # 할당 결과 확인
+    if x.value is None:
         return np.full(n_users, -1)
         
     return np.argmax(x.value, axis=1)
@@ -227,7 +247,7 @@ def statistical_tests(all_results):
         tests[metric] = {'t_statistic': t_stat, 'p_value': p_value, 'significant': p_value < 0.05}
     return tests
 
-def create_visualizations(aggregated, timestamp, dataset_name):
+def create_visualizations(aggregated, timestamp):
     fig1, axes = plt.subplots(1, 3, figsize=(18, 5))
     metrics_to_plot = [
         ('avg_distance', 'Average Distance (m)', 'skyblue'),
@@ -250,10 +270,9 @@ def create_visualizations(aggregated, timestamp, dataset_name):
         for i, (mean, std) in enumerate(zip(means, stds)):
             ax.text(i, mean + std, f'{mean:.1f}', ha='center', va='bottom', fontsize=9)
     
-    plt.suptitle(f'{dataset_name} - Algorithm Comparison', fontsize=14, fontweight='bold')
     plt.tight_layout()
-    plt.savefig(f'comparison_bars_{dataset_name}_{timestamp}.png', dpi=150)
-    print(f"Saved bar chart for {dataset_name}")
+    plt.savefig(f'comparison_bars_Weekend_{timestamp}.png', dpi=150)
+    print(f"Saved bar chart")
     
     fig2, axes = plt.subplots(1, 3, figsize=(18, 5))
     for idx, (metric, title, _) in enumerate(metrics_to_plot):
@@ -267,10 +286,9 @@ def create_visualizations(aggregated, timestamp, dataset_name):
         ax.set_ylabel('Value')
         ax.grid(axis='y', alpha=0.3)
     
-    plt.suptitle(f'{dataset_name} - Distribution Comparison', fontsize=14, fontweight='bold')
     plt.tight_layout()
-    plt.savefig(f'comparison_boxplots_{dataset_name}_{timestamp}.png', dpi=150)
-    print(f"Saved box plots for {dataset_name}")
+    plt.savefig(f'comparison_boxplots_Weekend_{timestamp}.png', dpi=150)
+    print(f"Saved box plots")
     
     fig3, ax = plt.subplots(figsize=(10, 6))
     metrics_for_improvement = ['avg_distance', 'congestion_score', 'avg_cost']
@@ -281,7 +299,7 @@ def create_visualizations(aggregated, timestamp, dataset_name):
     colors = ['green' if imp > 0 else 'red' for imp in improvements]
     bars = ax.barh(metric_labels, improvements, color=colors, alpha=0.7)
     ax.set_xlabel('Improvement over Greedy (%)', fontsize=12)
-    ax.set_title(f'{dataset_name} - Convex Optimization Effectiveness', fontsize=14, fontweight='bold')
+    ax.set_title('Convex Optimization Effectiveness', fontsize=14, fontweight='bold')
     ax.axvline(x=0, color='black', linestyle='--', linewidth=1)
     ax.grid(axis='x', alpha=0.3)
     for i, (imp, bar) in enumerate(zip(improvements, bars)):
@@ -289,16 +307,16 @@ def create_visualizations(aggregated, timestamp, dataset_name):
         ax.text(x_pos, i, f'{imp:+.1f}%', va='center', fontsize=11, fontweight='bold')
     
     plt.tight_layout()
-    plt.savefig(f'improvement_percentage_{dataset_name}_{timestamp}.png', dpi=150)
-    print(f"Saved improvement chart for {dataset_name}")
+    plt.savefig(f'improvement_percentage_Weekend_{timestamp}.png', dpi=150)
+    print(f"Saved improvement chart")
 
 def main():
     print("="*80)
-    print("Weekend Parking Allocation Analysis")
+    print("Parking Allocation (NO Distance Constraint) - Weekend")
     print("="*80)
     
-    data_path = os.path.join('data', 'summary_weekend_18.csv')
-    n_users = 500
+    data_path = os.path.join('data', 'summary_weekend_08.csv')
+    n_users = 1000
     n_runs = 20
     base_weights = (0.8, 0.1, 0.1)
     
@@ -329,7 +347,7 @@ def main():
     print(f"\n{'='*80}")
     print("Creating Visualizations...")
     print(f"{'='*80}")
-    create_visualizations(aggregated, timestamp, "Weekend")
+    create_visualizations(aggregated, timestamp)
     
     print(f"\n{'='*80}")
     print("Generating Report...")
@@ -366,7 +384,7 @@ def main():
         pd.DataFrame(raw_data).to_excel(writer, sheet_name='Raw_Results', index=False)
     
     print(f"\n{'='*80}")
-    print("WEEKEND RESULTS SUMMARY")
+    print("RESULTS SUMMARY (NO Distance Constraint) - Weekend")
     print(f"{'='*80}\n")
     
     print("Average Distance (meters):")

@@ -116,8 +116,23 @@ def run_convex(users, parking_df, d_matrix, weights=(0.8, 0.1, 0.1)):
     constraints = [cp.sum(x, axis=1) == 1, x <= 1]
     
     available_capacity = np.maximum(C - c, 0)
+    
+    # 혼잡도 상한 제약: (cⱼ + Σᵢ xᵢⱼ) / Cⱼ ≤ ρ_max
+    # 단, 이미 이용률이 ρ_max를 초과하는 주차장은 제외
+    rho_max = 0.95  # 최대 이용률 95%
+    
     for j in range(n_parkings):
-        constraints.append(cp.sum(x[:, j]) <= available_capacity[j] + 0.0001)
+        current_utilization = c[j] / C_safe[j]
+        
+        # 이미 이용률이 ρ_max를 초과하는 경우: 용량 제약만 적용
+        if current_utilization >= rho_max:
+            constraints.append(cp.sum(x[:, j]) <= available_capacity[j] + 0.0001)
+        else:
+            # 용량 제약과 혼잡도 제약 중 더 엄격한 것을 적용
+            capacity_limit = available_capacity[j] + 0.0001
+            congestion_limit = rho_max * C_safe[j] - c[j]
+            effective_limit = min(capacity_limit, max(0, congestion_limit) + 0.0001)
+            constraints.append(cp.sum(x[:, j]) <= effective_limit)
         
     prob = cp.Problem(objective, constraints)
     

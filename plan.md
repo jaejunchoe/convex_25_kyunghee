@@ -1,11 +1,10 @@
 minimize: α·Σᵢ (cⱼ + Σᵢ xᵢⱼ / Cⱼ)² + β·Σᵢⱼ dᵢⱼ·xᵢⱼ + γ·Σᵢⱼ (pⱼ·tᵢ)·xᵢⱼ
 
 subject to 
-Σⱼ xᵢⱼ = 1, ∀I
+Σⱼ xᵢⱼ = 1, ∀i
 Σᵢ xᵢⱼ ≤ Cⱼ - cⱼ, ∀j
-xᵢⱼ = 0 if dᵢⱼ > Dₘₐₓ
 xᵢⱼ ≥ 0, ∀i,j
-(cⱼ + Σⱼ xᵢⱼ ) / Cⱼ ≤ ρ_max, ∀j
+(cⱼ + Σᵢ xᵢⱼ ) / Cⱼ ≤ ρ_max, ∀j
 
 
 ᵢ: User

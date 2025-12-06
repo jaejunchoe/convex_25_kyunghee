@@ -9,6 +9,8 @@ __pycache__/
 venv/
 env/
 ENV/
+.venv/
+.env
 
 # IDE
 .vscode/
@@ -21,6 +23,8 @@ ENV/
 *.png
 *.csv
 !data/*.csv
+result/
+result.zip
 
 # Backup files
 *.backup
