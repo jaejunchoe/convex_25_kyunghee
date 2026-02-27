@@ -54,13 +54,17 @@
 <br/><br/>
 ## 4. Experiment Design And Results 
 <img width="1893" height="861" alt="image" src="https://github.com/user-attachments/assets/f6541b98-66b2-4cc8-a231-11e88749b7ba" />
-<img width="1889" height="507" alt="image" src="https://github.com/user-attachments/assets/cace4579-29b3-46fa-8bdd-2561774d9d07" />
+<img width="723" height="386" alt="image" src="https://github.com/user-attachments/assets/cb0d994c-ee35-498d-baf2-04db19156aca" />
 
 <br/><br/>
 
 <img width="1925" height="980" alt="image" src="https://github.com/user-attachments/assets/99e05179-9adc-41c6-8e07-373f470d158e" />
-<img width="2006" height="980" alt="image" src="https://github.com/user-attachments/assets/1fa4e08a-766c-4717-90c0-1ae891dc5133" />
+<img width="673" height="385" alt="image" src="https://github.com/user-attachments/assets/b06b5718-f297-4f83-b619-389a5a7c8e1b" />
 
+<br/><br/>
+
+<img width="2006" height="980" alt="image" src="https://github.com/user-attachments/assets/1fa4e08a-766c-4717-90c0-1ae891dc5133" />
+<img width="673" height="385" alt="image" src="https://github.com/user-attachments/assets/b06b5718-f297-4f83-b619-389a5a7c8e1b" />
 
 <br/><br/>
 ## 5. System UI/UX
