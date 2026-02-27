@@ -22,61 +22,69 @@
 
 # 🗂 Presentation
 ## 1. Data
+<img width="1879" height="755" alt="image" src="https://github.com/user-attachments/assets/e3ca4038-3921-4c51-b0eb-df2cd7864f5d" />
+
+<br/><br/>
+
 <img width="1838" height="798" alt="image" src="https://github.com/user-attachments/assets/86dc7bfd-d00b-4df3-8418-26f63e7434dd" />
 
 
 <br/><br/>
-## 2. Problem Definition & Service Design
-- '스마트에너지클러스터 기업 설문조사 및 수요조사'에 대한 분석
-![그림2](https://github.com/jaejunchoe/2023-Gumi-Industrial-Complex-Energy-Self-Sufficiency-Datathon/assets/157339263/263efd29-44fa-4133-be35-2c3102746fa1)
+## 2. Problem Definition
+<img width="1948" height="968" alt="image" src="https://github.com/user-attachments/assets/935d164b-1517-4bb5-8ce8-a04f5f089e75" />
 
 <br/><br/>
-## 3. Modeling
-- AI 모델 구현 로드맵
-![image](https://github.com/jaejunchoe/2023-Gumi-Industrial-Complex-Energy-Self-Sufficiency-Datathon/assets/157339263/b790f4db-db7f-46ac-b2f4-7a73f2e42b43)
 
-<br/>
+<img width="1834" height="679" alt="image" src="https://github.com/user-attachments/assets/9ee7eac7-1f3d-49e9-8da2-2777961cd3c3" />
 
-- 사용 알고리즘
-  
-(1) Linear Models (선형모델) – 'Linear Regression', 'SVR'
-
-(2) Neural Networks (인공신경망) – 'Neural Network', 'MLPRegression'
-
-(3) Ensemble Models (앙상블) – 'Random Forest', 'Neural Network', 'Voting', 'Stacking'
-
-(4) Gradient Boosting (그래디언트 부스팅) – 'LGBM Regression', 'Gradient Boosting Regression'
-
-(5) RNN – 'LSTM'
-
-(6) KNN - 'KNN'
 
 <br/><br/>
-## 4. Data Analysis And Results 
-- Clustering & AI Model 학습 결과
-
-  **최적 예측 모델** = `Ensemble Model` 
-
-
-     (1) 구미산단 데이터톤 전력사용량 데이터
-     ![image](https://github.com/jaejunchoe/2023-Gumi-Industrial-Complex-Energy-Self-Sufficiency-Datathon/assets/157339263/4c01505b-8f5a-4e1f-882f-9826820a92cd)
-
-
-
-     (2) 구미산단 데이터톤 태양광 발전량 데이터
-     ![image](https://github.com/jaejunchoe/2023-Gumi-Industrial-Complex-Energy-Self-Sufficiency-Datathon/assets/157339263/3271426a-e849-440e-bb21-a1c0e6078cbb)
-
-
-
-     (3) 구미 에너지자급자족사업 참여기업 A사 전력량 데이터
-     ![image](https://github.com/jaejunchoe/2023-Gumi-Industrial-Complex-Energy-Self-Sufficiency-Datathon/assets/157339263/81966e72-1443-41c7-b2b9-28e19919435f)
+## 3. Purpose & Modeling
+<img width="1984" height="920" alt="image" src="https://github.com/user-attachments/assets/a43e2546-e293-4aad-bfc1-718d554a2cca" />
 
 <br/><br/>
-## 5. Conclusion & Comment
-- 데이터의 크기 및 규모가 크고 개인 노트북을 사용하기에 모델 실행과 디버깅을 하기에 많은 시간이 소요되어 어려움이 존재했다.
-- 팀원 모두가 데이터톤의 경험이 전무했기에 EDA에서 많은 시간이 소요되었다. 특히, 전력량의 시차 연관성을 파악에 많은 고민을 했다.
-- Clustering에서 K-Means Clustering으로만 진행하다가 교수님의 자문을 통해 시계열 클러스터링을 통해서 비슷한 패턴을 갖는 기업끼리 Clustering을 하니 훨씬 수월하게 진행되었다. 
-- 여러 알고리즘들을 구현 및 적용하여 결과를 비교하면서 해당 데이터의 최적 알고리즘을 도출할 수 있었다.
+
+<img width="1889" height="986" alt="image" src="https://github.com/user-attachments/assets/6a4cba39-239e-4ab1-b6da-35f0d637ad9d" />
+
+<br/><br/>
+
+<img width="1809" height="877" alt="image" src="https://github.com/user-attachments/assets/f959a823-0cbe-4f6a-8a68-e18570b07e42" />
+
+
+<br/><br/>
+## 4. Experiment Design And Results 
+<img width="1893" height="861" alt="image" src="https://github.com/user-attachments/assets/f6541b98-66b2-4cc8-a231-11e88749b7ba" />
+<img width="1889" height="507" alt="image" src="https://github.com/user-attachments/assets/cace4579-29b3-46fa-8bdd-2561774d9d07" />
+
+<br/><br/>
+
+<img width="1925" height="980" alt="image" src="https://github.com/user-attachments/assets/99e05179-9adc-41c6-8e07-373f470d158e" />
+<img width="2006" height="980" alt="image" src="https://github.com/user-attachments/assets/1fa4e08a-766c-4717-90c0-1ae891dc5133" />
+
+
+<br/><br/>
+## 5. System UI/UX
+<img width="1832" height="909" alt="image" src="https://github.com/user-attachments/assets/39b62297-d89f-4a5e-b9dd-d89bd003a534" />
+
+<br/><br/>
+
+<img width="1904" height="950" alt="image" src="https://github.com/user-attachments/assets/1baf318c-cb30-4461-abcc-acaf04608de4" />
+
+<br/><br/>
+
+<img width="1947" height="734" alt="image" src="https://github.com/user-attachments/assets/62fde055-2942-494b-99ef-c69647b24f6f" />
+
+
+<br/><br/>
+## 6. Conclusion & Discussion
+- 상한 제약(ρ_max=0.95)으로 혼잡도가 기존 Greedy 대비 평일 8.2%, 주말 7.5% 개선됨. 
+- 고정적인 가중치가 아닌 LLM을 통한 Prompt 기반의 가중치 추천도 성능개선을 보임.
+- 평균 거리를 유지하면서 전역 최적해를 보장하지만 상한 제약 추가 시 통계적 유의성이 감소함.
+- 강건하고 최적화된 Prompt Engineering이 반영된 가중치 자동 조정 메커니즘의 도입 필요함. 
+- 정부 측면에서는 주차 탐색 및 불법 정차 감소와 AI 기반 주차 관리 시스템을 활용할 수 있음.
+- 이용자 측면에서는 개인 목적지 맞춤화에 따른 시간 절약과 비용 및 스트레스 감소의 이점이 존재함.
+- 알고리즘 및 모델 측면에서는 거리, 혼잡도, 비용을 동시에 고려한 종합적 최적화와 전역 최적성을 보장할 수 있음.
+
 
 
 
