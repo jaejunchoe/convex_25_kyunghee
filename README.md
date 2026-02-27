@@ -6,8 +6,8 @@
 # ✨ Team K2R1
 1. 구성원
 * 팀장: Jinman Kim - Ph.D. Stundent (Part-time, [TM Lab](https://tmlab.khu.ac.kr/home)), Dept. of Big Data Analytics, KyungHee University
-* 팀원: Hyeonjong Jang - M.S. Stundent ([AIMS Lab](https://sites.google.com/khu.ac.kr/aims/home?authuser=0))), Dept. of Artificial Intelligence, KyungHee University
-* 팀원: Jaejoon Choi - M.S. Stundent ([AIMS Lab](https://sites.google.com/khu.ac.kr/aims/home?authuser=0))), Dept. of Industrial and Management Systems Engineering, KyungHee University
+* 팀원: Hyeonjong Jang - M.S. Stundent ([AIMS Lab](https://sites.google.com/khu.ac.kr/aims/home?authuser=0)), Dept. of Artificial Intelligence, KyungHee University
+* 팀원: Jaejoon Choi - M.S. Stundent ([AIMS Lab](https://sites.google.com/khu.ac.kr/aims/home?authuser=0)), Dept. of Industrial and Management Systems Engineering, KyungHee University
 * 팀원: Yunseo Hwang - M.S. Stundent ([TM Lab](https://tmlab.khu.ac.kr/home)), Dept. of Industrial and Management Systems Engineering, KyungHee University
 
 <br/>
@@ -89,10 +89,3 @@
 - 이용자 측면에서는 개인 목적지 맞춤화에 따른 시간 절약과 비용 및 스트레스 감소의 이점이 존재함.
 - 알고리즘 및 모델 측면에서는 거리, 혼잡도, 비용을 동시에 고려한 종합적 최적화와 전역 최적성을 보장할 수 있음.
 
-
-
-
-
-
-
-<img width="1838" height="798" alt="image" src="https://github.com/user-attachments/assets/1da60391-d82c-4ad0-a7ae-88e4e313e540" />
