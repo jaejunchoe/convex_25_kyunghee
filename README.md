@@ -1,29 +1,29 @@
 # Convex Optimization-Based Municipal Parking Lot Recommendation System in Seoul
-* `Period: Term project conducted in the Convex Optimization Lecture at KyungHee University, 2st Semester 2025, 2025.09 ~ 2023.12`
+* `Period: Term project conducted in the Convex Optimization Lecture at KyungHee University, 2st Semester 2025, 2025.09 ~ 2025.12`
 
 <br/><br/>
 
 # ✨ Team K2R1
 1. 구성원
-* 팀장: Jinman Kim - Ph.D. Stundent ([TM Lab](https://tmlab.khu.ac.kr/home)), Dept. of Big Data Analytics, KyungHee University
-* 팀원: 장현종 - M.S. Stundent ([AIMS Lab](https://sites.google.com/khu.ac.kr/aims/home?authuser=0))), Dept. of Artificial Intelligence, KyungHee University
-* 팀원: 최재준 - M.S. Stundent ([AIMS Lab](https://sites.google.com/khu.ac.kr/aims/home?authuser=0))), Dept. of Industrial and Management Systems Engineering, KyungHee University
-* 팀원: 황윤서 - M.S. Stundent ([TM Lab](https://tmlab.khu.ac.kr/home)), Dept. of Industrial and Management Systems Engineering, KyungHee University
+* 팀장: Jinman Kim - Ph.D. Stundent (Part-time, [TM Lab](https://tmlab.khu.ac.kr/home)), Dept. of Big Data Analytics, KyungHee University
+* 팀원: Hyeonjong Jang - M.S. Stundent ([AIMS Lab](https://sites.google.com/khu.ac.kr/aims/home?authuser=0))), Dept. of Artificial Intelligence, KyungHee University
+* 팀원: Jaejoon Choi - M.S. Stundent ([AIMS Lab](https://sites.google.com/khu.ac.kr/aims/home?authuser=0))), Dept. of Industrial and Management Systems Engineering, KyungHee University
+* 팀원: Yunseo Hwang - M.S. Stundent ([TM Lab](https://tmlab.khu.ac.kr/home)), Dept. of Industrial and Management Systems Engineering, KyungHee University
 
 <br/>
 
 2. 주 임무
-* 전민욱 - 데이터 분석, 서비스 기획, AI 설계
-* 최재준 - 서비스 기획, 데이터 분석
-* Salakhov Tagir - AI 설계, 데이터 분석
+* Jinman Kim - Framework Design, Data Collection and Preprocessing
+* Hyeonjong Jang - System Implementation, Prompt Engineering
+* Jaejoon Choi - System Implementation, Prompt Engineering
+* Yunseo Hwang - Data Collection and Preprocessing, Model Validation
 
 <br/><br/>
 
 # 🗂 Presentation
 ## 1. Data
-1. 구미 에너지자급자족사업 참여기업 A사 2023.07.26 시간별 에너지 사용량 데이터
-2. 한국전력공사 데이터 - 2020~2022년 데이터톤 DB(전력사용량, 태양광 발전) + 전력사용량은 1시간 간격, 태양광 발전은 15분 간격
-3. 수요 및 설문조사 데이터 - 2023년 구미산업단지공단 스마트에너지클러스터 기업 설문조사 및 수요조사 
+<img width="1838" height="798" alt="image" src="https://github.com/user-attachments/assets/86dc7bfd-d00b-4df3-8418-26f63e7434dd" />
+
 
 <br/><br/>
 ## 2. Problem Definition & Service Design
